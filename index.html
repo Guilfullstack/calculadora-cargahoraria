@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga horária</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Calculadora de carga horária</h1>
+
+<input type="file" id="csvFiles" multiple accept=".csv">
+<button onclick="processFiles()">Processar dados</button>
+
+<progress id="progressBar" value="0" max="100"></progress>
+
+<table id="resultTable">
+    <thead>
+        <tr>
+            <th>Membro</th>
+            <th>Carga Horária Total</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<p id="totalHours">Carga Horária Total de Todos os Arquivos: 0</p>
+
+<script src="script.js"></script>
+</body>
+</html>
