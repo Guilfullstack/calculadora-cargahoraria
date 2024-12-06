@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carga horária</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Calcular Carga Horária</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="assets/image-logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <header>
+        <h1>Calculadora de carga horária</h1>
+    </header>
 
-<h1>Calculadora de carga horária</h1>
+    <div class="container">
+        <img src="assets/image-logo.png" alt="Imagem ilustrativa do sistema">
+        <div class="content">
+            <h2>Como usar o sistema</h2>
+            <p>
+                O objetivo do meu site é oferecer uma forma rápida e fácil para as ligas acadêmicas calcularem a carga horária das suas atividades e dos seus membros na hora de entregar relatórios.
+            </p>
+            <p>
+                Para que o sistema funcione corretamente:
+            </p>
+            <ul>
+                <li>Os arquivos devem estar no formato CSV.</li>
+                <li>Devem conter uma coluna com o nome <strong>Carga Horária</strong> com o valor numérico da carga horária da atividade.</li>
+                <li>Uma coluna <strong>Membros</strong> que deve conter o nome dos membros. Caso a atividade tenha mais de um membro, os nomes devem estar entre aspas e separados por vírgulas.</li>
+            </ul>
+            <p>
+                Caso você use um dos nossos modelos de gerenciamento do Notion, não será preciso alterar nada. Apenas exporte no formato correto e carregue os arquivos aqui:
+                <a href="#">Baixe os modelos aqui</a>.
+            </p>
+        </div>
+    </div>
 
-<input type="file" id="csvFiles" multiple accept=".csv">
-<button onclick="processFiles()">Processar dados</button>
+    <main>
+        <input type="file" id="csvFiles" multiple accept=".csv">
+        <button onclick="processFiles()">Processar dados</button>
+        <progress id="progressBar" value="0" max="100"></progress>
 
-<progress id="progressBar" value="0" max="100"></progress>
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>Membro</th>
+                    <th>Carga Horária Total</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
 
-<table id="resultTable">
-    <thead>
-        <tr>
-            <th>Membro</th>
-            <th>Carga Horária Total</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+        <p id="totalHours">Carga Horária Total de Todos os Arquivos: 0</p>
+    </main>
 
-<p id="totalHours">Carga Horária Total de Todos os Arquivos: 0</p>
-
-<script src="script.js"></script>
+    <footer>
+        <p>&copy; 2024 Guilherme Almeida | <a href="mailto:guidevtec@gmail.com">guidevtec@gmail.com</a></p>
+        <script src="script/script.js"></script>
+    </footer>
 </body>
+
 </html>
